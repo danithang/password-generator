@@ -32,8 +32,12 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+#showing a empty list to fill later
 password_list = []
+#using for loop and range 1 is the start, nr_letters is the stop and +1 is telling how the loop will work
 for letter in range(1, nr_letters + 1):
+    #append is used to populate the empty password_list and randomize letters
     password_list.append(random.choice(letters))
 
 for symbol in range(1, nr_symbols + 1):
@@ -41,6 +45,8 @@ for symbol in range(1, nr_symbols + 1):
 
 for number in range(1, nr_numbers + 1):
     password_list.append(random.choice(numbers))
+#random.shuffle the password_list to randomize numbers, symbols, and letters
 random.shuffle(password_list)
 print("Here is your password list:")
+#joining password list on same line
 print("".join(password_list))
